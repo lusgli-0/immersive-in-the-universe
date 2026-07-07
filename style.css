@@ -48,9 +48,18 @@ html, body {
   min-width:100vw;
   min-height:100vh;
   z-index:-1;
-  background:
-    linear-gradient(45deg, rgba(246, 255, 147, 1), rgb(163, 255, 169), rgba(255, 117, 165, 1), rgba(107, 188, 255, 1), rgba(152, 112, 255, 1));
-    background-size: 650% 650%;
+  /*customised variables, used to define the center of the move of the bg*/
+  --x: 50%;
+  --y: 50%;
+  background-image:
+    radial-gradient(circle at var(--x) var(--y),
+      rgba(246, 255, 147, 1),
+      rgba(163, 255, 169, 1),
+      rgba(255, 117, 165, 1),
+      rgba(107, 188, 255, 1),
+      rgba(152, 112, 255, 1));
+  background-size: 650% 650%;
+  transition: background-position 20s ease-out;
   animation: gradient-move 20s ease infinite;
 }
 
