@@ -29,6 +29,18 @@ html, body {
   overflow:hidden;
 }
 
+@keyframes gradient-move {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 .flow-bg{
   position:fixed;
   top:0;
@@ -37,9 +49,9 @@ html, body {
   min-height:100vh;
   z-index:-1;
   background:
-    radial-gradient(circle at top left, rgba(110, 231, 255, 0.16), transparent 30%),
-    radial-gradient(circle at bottom right, rgba(124, 140, 255, 0.16), transparent 30%),
     linear-gradient(45deg, rgba(246, 255, 147, 1), rgb(163, 255, 169), rgba(255, 117, 165, 1), rgba(107, 188, 255, 1), rgba(152, 112, 255, 1));
+    background-size: 650% 650%;
+  animation: gradient-move 20s ease infinite;
 }
 
 .content{
