@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // 多语言文本字典：后续可继续扩展更多字段
   const translations = {
     zh: {
       "site-title": "immersive-universe",
