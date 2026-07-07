@@ -10,19 +10,13 @@
   --shadow: 0 20px 50px rgba(0, 0, 0, 0.32);
 }
 
-/* 基础全局重置 */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-html {
-  font-size: 16px;
-  scroll-behavior: smooth;
-}
-
-body {
+html, body {
   min-height: 100vh;
   background:
     radial-gradient(circle at top left, rgba(110, 231, 255, 0.16), transparent 30%),
@@ -31,6 +25,7 @@ body {
   color: var(--text);
   font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
   line-height: 1.6;
+
 }
 
 a {
@@ -117,7 +112,7 @@ img {
 }
 
 .hero-title {
-  font-size: clamp(2rem, 4vw, 3.6rem);
+  font-size: clamp(2rem, 3vw, 3.6rem);
   line-height: 1.1;
   margin-bottom: 1rem;
 }
