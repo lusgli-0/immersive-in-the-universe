@@ -17,15 +17,35 @@
 }
 
 html, body {
-  min-height: 100vh;
+  min-height:100vh;
+  min-width:100vw;
+  /*dynamic viewport height, used for mobile devices's view adaption*/
+  min-height:100dvh;
+  min-width:100dvw;
+  color: var(--text);
+  /*what font should be used firstly*/
+  font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+  line-height: 1.6;
+  overflow:hidden;
+}
+
+.flow-bg{
+  position:fixed;
+  top:0;
+  left:0;
+  min-width:100vw;
+  min-height:100vh;
+  z-index:-1;
   background:
     radial-gradient(circle at top left, rgba(110, 231, 255, 0.16), transparent 30%),
     radial-gradient(circle at bottom right, rgba(124, 140, 255, 0.16), transparent 30%),
-    var(--bg);
-  color: var(--text);
-  font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
-  line-height: 1.6;
+    linear-gradient(45deg, rgba(246, 255, 147, 1), rgb(163, 255, 169), rgba(255, 117, 165, 1), rgba(107, 188, 255, 1), rgba(152, 112, 255, 1));
+}
 
+.content{
+  position:relative;
+  z-index:1;
+  min-height:100vh;
 }
 
 a {
@@ -40,16 +60,8 @@ button {
   cursor: pointer;
 }
 
-img {
-  display: block;
-  max-width: 100%;
-}
-
 .nav-bar,
-.hero-section,
-.about-section,
-.works-section,
-.site-footer {
+.hero-section {
   width: min(1120px, calc(100% - 2rem));
   margin: 0 auto;
 }
@@ -140,69 +152,6 @@ img {
 
 .hero-button.outline {
   background: transparent;
-}
-
-.about-section,
-.works-section {
-  padding: 2.5rem 0 0;
-}
-
-.section-header {
-  margin-bottom: 1.5rem;
-}
-
-.section-header h2 {
-  margin-bottom: 0.35rem;
-  font-size: 1.6rem;
-}
-
-.section-header p {
-  color: var(--muted);
-}
-
-.about-content,
-.works-grid {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-}
-
-.about-card,
-.work-card {
-  padding: 1.25rem;
-  border: 1px solid var(--border);
-  border-radius: 1rem;
-  background: var(--surface);
-  box-shadow: var(--shadow);
-}
-
-.about-card h3,
-.work-card h3 {
-  margin-bottom: 0.5rem;
-}
-
-.about-card p,
-.work-card p {
-  color: var(--muted);
-}
-
-.site-footer {
-  padding: 3rem 0 2rem;
-  color: var(--muted);
-}
-
-.footer-content {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  flex-wrap: wrap;
-  border-top: 1px solid var(--border);
-  padding-top: 1.25rem;
-}
-
-.footer-links {
-  display: flex;
-  gap: 1rem;
 }
 
 @media (max-width: 640px) {
