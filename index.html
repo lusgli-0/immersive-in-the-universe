@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="immersive-universe personal website" />
+    <title>immersive-universe</title>
+    <!-- 引入外部样式文件 -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- 导航栏：后续可继续加入语言切换、社交链接或菜单项 -->
+    <nav id="main-nav" class="nav-bar" aria-label="Primary navigation">
+      <a href="#hero" class="nav-brand" data-i18n="site-title">immersive-universe</a>
+      <ul class="nav-list">
+        <li><a href="#hero" data-i18n="nav-home">首页</a></li>
+        <li><a href="#about" data-i18n="nav-about">关于我</a></li>
+        <li><a href="#works" data-i18n="nav-works">作品</a></li>
+        <li><a href="#footer" data-i18n="nav-contact">联系</a></li>
+      </ul>
+      <button id="lang-switch" type="button" data-i18n="lang-switch">EN</button>
+    </nav>
+
+    <!-- 首屏主视觉区：Hero 区域，适合放置主标题、简介与 CTA -->
+    <header id="hero" class="hero-section">
+      <div class="hero-content">
+        <p class="hero-subtitle" data-i18n="hero-subtitle">沉浸在宇宙与星空之间</p>
+        <h1 class="hero-title" data-i18n="hero-title">探索你的下一段星际旅程</h1>
+        <p class="hero-description" data-i18n="hero-description">
+          这是一个以沉浸感为核心的个人展示页，聚焦于设计、创意与未来感体验。
+        </p>
+        <div class="hero-actions">
+          <a href="#works" class="hero-button" data-i18n="hero-cta-primary">查看作品</a>
+          <a href="#about" class="hero-button outline" data-i18n="hero-cta-secondary">了解我</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- 关于我：可扩展为个人简介、技能栈、价值主张 -->
+    <main>
+      <section id="about" class="about-section">
+        <div class="section-header">
+          <h2 data-i18n="about-title">关于我</h2>
+          <p data-i18n="about-intro">
+            将极简与未来主义融合，以宇宙为灵感打造沉浸式体验。
+          </p>
+        </div>
+        <div class="about-content">
+          <article class="about-card">
+            <h3 data-i18n="about-card-title-1">我的定位</h3>
+            <p data-i18n="about-card-text-1">
+              前端开发者 / 视觉设计爱好者 / 宇宙沉浸体验创造者
+            </p>
+          </article>
+          <article class="about-card">
+            <h3 data-i18n="about-card-title-2">我的方法</h3>
+            <p data-i18n="about-card-text-2">
+              简洁布局、精妙动效、清晰层次，强调用户的沉浸感与探索欲。
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- 作品与经历：后续可替换为项目卡片、时间线或案例列表 -->
+      <section id="works" class="works-section">
+        <div class="section-header">
+          <h2 data-i18n="works-title">作品与经历</h2>
+          <p data-i18n="works-intro">
+            精选项目展示，展示我的设计思路与实现能力。
+          </p>
+        </div>
+        <div class="works-grid">
+          <article class="work-card">
+            <h3 data-i18n="work-card-title-1">星空交互界面</h3>
+            <p data-i18n="work-card-text-1">
+              一个以星空为主题的交互页面，强调视觉层次与动效体验。
+            </p>
+          </article>
+          <article class="work-card">
+            <h3 data-i18n="work-card-title-2">沉浸式个人主页</h3>
+            <p data-i18n="work-card-text-2">
+              结合简洁布局与宇宙美学，打造沉浸式内容呈现方式。
+            </p>
+          </article>
+          <article class="work-card">
+            <h3 data-i18n="work-card-title-3">未来感网页动画</h3>
+            <p data-i18n="work-card-text-3">
+              通过细腻动画提升页面活力，增强用户探索感受。
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <!-- 页脚：可继续扩展为版权信息、社交媒体或联系入口 -->
+    <footer id="footer" class="site-footer">
+      <div class="footer-content">
+        <p data-i18n="footer-text">© 2026 immersive-universe. 由极简主义与宇宙美学驱动。</p>
+        <div class="footer-links">
+          <a href="#hero" data-i18n="footer-link-top">回到顶部</a>
+          <a href="mailto:your@email.com" data-i18n="footer-link-contact">联系我</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- 引入外部脚本文件 -->
+    <script src="script.js"></script>
+  </body>
+</html>
