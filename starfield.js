@@ -17,8 +17,11 @@ const glow=[
     'rgb(255, 255, 255)',
     'rgb(255, 255, 255)',
     'rgb(255, 255, 255)',
-    '#28dcbe',
-    '#d718bd'
+    'rgb(255, 255, 255)',
+    'rgb(255, 255, 255)',
+    'rgb(255, 255, 255)',
+    '#d2fff7',
+    '#ffc2f7'
 ];
 /*set some basic numbers for edit the speed of diff kind of stars*/
 const speedPara=[1,0.8,0.6];
@@ -47,19 +50,24 @@ function drawStar(){
     ctx.clearRect(0,0,width,height);
     glow.forEach((color,index)=>{
         ctx.beginPath();
-        ctx.fillStyle='white';
         ctx.shadowColor=color;
         stars.forEach(star=>{
             if (star.glowColor===index){
                 star.x+=star.vx;
                 star.y+=star.vy;
-                //out-of-bounds movement detection
+                //out-of-bounds movement detection and resetting the position of the star
                 if (star.x>width) star.x-=width;
                 if (star.y>height) star.y-=height;
                 if (star.x<0) star.x+=width;
                 if (star.y<0) star.y+=height;
                 if (star.x<0 || star.x>width) star.y=Math.random()*height;
                 else if (star.y<0 || star.y>height) star.x=Math.random()*width;
+
+                //create a radial gradient for the star inner glow effect
+                const gradient=ctx.createRadialGradient(star.x,star.y,0,star.x,star.y,star.r);
+                gradient.addColorStop(0,'white');
+                gradient.addColorStop(1,color);
+                ctx.fillStyle=gradient;
 
                 ctx.shadowBlur=star.glowIntensity;
                 ctx.moveTo(star.x,star.y);
@@ -74,16 +82,7 @@ function drawStar(){
 
 drawStar();
 
-/*animate twinkle by scaling*/
-/*@keyframes twinkle {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.5); }
-}
-
-@keyframes drift-motion{
-  0% {transform:translate(0,0);}
-  100% {transform:translate(1px,-1px);}
-}
+/*
 
 function twinkleVibration(star,intensity=0.5){
     let xNoise=Math.random()
@@ -99,24 +98,4 @@ function twinkleVibration(star,intensity=0.5){
     }
 
     animate()
-}
-
-// 创建单个星星并添加随机动画延迟
-const star = document.createElement('div')
-star.classList.add('star')
-
-// 随机延迟 0～5 秒
-const randomDelay = (Math.random() * 5).toFixed(2)
-star.style.animationDelay = `${randomDelay}s`
-
-document.body.appendChild(star)
-
-const observer=new IntersectionObserver((entries)=>{
-    entries.forEach(entry=>{
-        if (entry.isIntersecting){
-            entry.target.style.willChange='transform,filter';
-        }else{
-            entry.target.style.willChange='auto';
-        }
-    })
-})*/
+}*/

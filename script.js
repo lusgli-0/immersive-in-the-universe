@@ -14,15 +14,15 @@ document.addEventListener("DOMContentLoaded", () => {
       "hero-cta-secondary": "了解我"
     },
     en: {
-      "site-title": "Lusper Glimmer",
+      "site-title": "lusper glimmer",
       "nav-home": "Home",
       "nav-about": "About",
       "nav-works": "Works",
       "nav-contact": "Contact",
       "lang-switch": "中",
-      "hero-subtitle": "Immersed in the cosmos and the stars",
+      "hero-subtitle": "Immersed in the universe and the galaxies",
       "hero-title": "Explore your next dreamlike journey",
-      "hero-description": "The essential light will naturally emerge on its own",
+      "hero-description": "The essential light is destined to naturally emerge on its own",
       "hero-cta-primary": "View Works",
       "hero-cta-secondary": "About Me"
     }

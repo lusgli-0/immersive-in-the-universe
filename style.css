@@ -76,51 +76,55 @@ html, body {
 }
 
 .flow-bg .c1{
-  width: 110%;
-  height: 110%;
+  width: 120%;
+  height: 120%;
   z-index:-1;
   background: #003c64;
   top: -30%;
   left: 5%;
-  filter:blur(150px);
+  filter:blur(175px);
   transform-origin: center center;
   animation: c1-move 73s infinite -3s;
+  animation-delay:var(--c-delay);
 }
 
 .flow-bg .c2{
-  width: 105%;
-  height: 115%;
+  width: 115%;
+  height: 125%;
   z-index:-1;
   background: #4000a0;
   top: 0%;
   left: -25%;
-  filter:blur(150px);
+  filter:blur(175px);
   transform-origin: center center;
   animation: c2-move 79s infinite -6s;
+  animation-delay:var(--c-delay);
 }
 
 .flow-bg .c3{
-  width: 120%;
-  height: 110%;
+  width: 130%;
+  height: 120%;
   z-index:-1;
   background:#0059c0;
   top: 20%;
   left: -45%;
-  filter:blur(150px);
+  filter:blur(175px);
   transform-origin: center center;
   animation: c3-move 83s infinite -1s;
+  animation-delay:var(--c-delay);
 }
 
 .flow-bg .c4{
-  width: 120%;
-  height: 105%;
+  width: 130%;
+  height: 115%;
   z-index:-1;
   background:#020088;
   top: 30%;
   left: 10%;
-  filter:blur(150px);
+  filter:blur(175px);
   transform-origin: center center;
   animation: c4-move 89s infinite -4s;
+  animation-delay:var(--c-delay);
 }
 
 @keyframes c1-move {
@@ -277,7 +281,6 @@ button {
   color: var(--muted);
   margin-bottom: 1.5rem;
 }
-
 
 .hero-actions {
   display: flex;
