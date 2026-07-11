@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="just a simple personal website" />
-    <title>hi!lusper glimmer is here!(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧</title>
+    <title>hi! lusper glimmer is here!(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧</title>
     <link rel="stylesheet" href="style.css" />
     <meta name="author" content="lusgli-0, lusgli-0@outlook.com"/>
     <!--temporarily do not let search engine find it-->
@@ -12,7 +12,14 @@
   </head>
   
   <body>
-    <div class="flow-bg" id="bg"></div>
+    <!--fluid sky with movable circles-->
+    <div class="flow-bg" id="bg">
+      <span class="circle c1"></span>
+      <span class="circle c2"></span>
+      <span class="circle c3"></span>
+      <span class="circle c4"></span>
+      <canvas id="starfield"></canvas>
+    </div>
     
     <div class="content">
     <!--navigation bar-->
@@ -32,7 +39,7 @@
         <p class="hero-subtitle" data-i18n="hero-subtitle">沉浸在宇宙与星空中</p>
         <h1 class="hero-title" data-i18n="hero-title">于幻梦中探索下一段旅程</h1>
         <p class="hero-description" data-i18n="hero-description">
-          那本质的光芒 终将自发地涌现
+          那本质的光芒 终将自发地<span class='emerge'>涌现</span>
         </p>
         <div class="hero-actions">
           <a href="#works" class="hero-button" data-i18n="hero-cta-primary">查看作品</a>
@@ -43,6 +50,7 @@
 
     <script src="script.js" defer></script>
     <script src="move_bg_with_user.js" defer></script>
+    <script src="starfield.js" defer></script>
     </div>
   </body>
 </html>

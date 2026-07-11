@@ -41,31 +41,153 @@ html, body {
   }
 }
 
+/*yes flowable background, which is put underware*/
 .flow-bg{
   position:fixed;
   top:0;
   left:0;
   min-width:100vw;
   min-height:100vh;
-  z-index:-1;
+  z-index:-2;
   /*customised variables, used to define the center of the move of the bg*/
   --x: 50%;
   --y: 50%;
   background-image:
     radial-gradient(circle at var(--x) var(--y),
-      rgba(246, 255, 147, 1),
+      rgba(246, 255, 147, 1) 10%,
       rgba(163, 255, 169, 1),
       rgba(255, 117, 165, 1),
       rgba(107, 188, 255, 1),
       rgba(152, 112, 255, 1));
   background-size: 650% 650%;
-  transition: background-position 20s ease-out;
-  animation: gradient-move 20s ease infinite;
+  box-shadow:inset 10px 10px 200px rgba(255, 255, 255, 0.2);
+  animation: gradient-move 20s ease infinite alternate;
+}
+
+/*mesh gradient circle*/
+.flow-bg .circle{
+  position:absolute;
+  border-radius: 50%;
+  mix-blend-mode: luminosity;
+  pointer-events: none;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-timing-function: ease-in-out;
+}
+
+.flow-bg .c1{
+  width: 110%;
+  height: 110%;
+  z-index:-1;
+  background: #003c64;
+  top: -30%;
+  left: 5%;
+  filter:blur(150px);
+  transform-origin: center center;
+  animation: c1-move 73s infinite -3s;
+}
+
+.flow-bg .c2{
+  width: 105%;
+  height: 115%;
+  z-index:-1;
+  background: #4000a0;
+  top: 0%;
+  left: -25%;
+  filter:blur(150px);
+  transform-origin: center center;
+  animation: c2-move 79s infinite -6s;
+}
+
+.flow-bg .c3{
+  width: 120%;
+  height: 110%;
+  z-index:-1;
+  background:#0059c0;
+  top: 20%;
+  left: -45%;
+  filter:blur(150px);
+  transform-origin: center center;
+  animation: c3-move 83s infinite -1s;
+}
+
+.flow-bg .c4{
+  width: 120%;
+  height: 105%;
+  z-index:-1;
+  background:#020088;
+  top: 30%;
+  left: 10%;
+  filter:blur(150px);
+  transform-origin: center center;
+  animation: c4-move 89s infinite -4s;
+}
+
+@keyframes c1-move {
+  0% { transform: translate(0%, 0%) rotate(0deg) scale(1); }
+  12% { transform: translate(36%, -24%) rotate(48deg) scale(1.1); }
+  24% { transform: translate(-42%, 28%) rotate(-62deg) scale(0.95); }
+  36% { transform: translate(50%, 40%) rotate(98deg) scale(1.06); }
+  48% { transform: translate(-48%, -38%) rotate(-82deg) scale(0.92); }
+  60% { transform: translate(34%, -50%) rotate(54deg) scale(1.03); }
+  76% { transform: translate(-30%, 42%) rotate(-38deg) scale(1.08); }
+  88% { transform: translate(46%, 22%) rotate(70deg) scale(0.97); }
+  100% { transform: translate(0%, 0%) rotate(0deg) scale(1); }
+}
+
+@keyframes c2-move {
+  0% { transform: translate(0%, 0%) rotate(0deg) scale(1); }
+  10% { transform: translate(-44%, 20%) rotate(-58deg) scale(1.08); }
+  22% { transform: translate(48%, -36%) rotate(68deg) scale(0.92); }
+  34% { transform: translate(-42%, -48%) rotate(-92deg) scale(1.14); }
+  46% { transform: translate(42%, 34%) rotate(78deg) scale(0.95); }
+  58% { transform: translate(-36%, 44%) rotate(-46deg) scale(1.04); }
+  70% { transform: translate(50%, -28%) rotate(88deg) scale(0.98); }
+  82% { transform: translate(-32%, 32%) rotate(-60deg) scale(1.02); }
+  100% { transform: translate(0%, 0%) rotate(0deg) scale(1); }
+}
+
+@keyframes c3-move {
+  0% { transform: translate(0%, 0%) rotate(0deg) scale(1); }
+  14% { transform: translate(44%, -32%) rotate(72deg) scale(1.12); }
+  26% { transform: translate(-50%, 38%) rotate(-84deg) scale(0.9); }
+  38% { transform: translate(38%, 48%) rotate(108deg) scale(1.05); }
+  52% { transform: translate(-44%, -42%) rotate(-92deg) scale(0.94); }
+  66% { transform: translate(42%, -24%) rotate(64deg) scale(1.08); }
+  80% { transform: translate(-30%, 46%) rotate(-72deg) scale(1); }
+  94% { transform: translate(50%, 14%) rotate(82deg) scale(0.96); }
+  100% { transform: translate(0%, 0%) rotate(0deg) scale(1); }
+}
+
+@keyframes c4-move {
+  0% { transform: translate(0%, 0%) rotate(0deg) scale(1); }
+  18% { transform: translate(-42%, 44%) rotate(-64deg) scale(1.12); }
+  30% { transform: translate(50%, -34%) rotate(96deg) scale(0.88); }
+  44% { transform: translate(-48%, 26%) rotate(-82deg) scale(1.1); }
+  58% { transform: translate(32%, -50%) rotate(68deg) scale(0.95); }
+  72% { transform: translate(-34%, 52%) rotate(-58deg) scale(1.06); }
+  86% { transform: translate(46%, 16%) rotate(88deg) scale(0.92); }
+  100% { transform: translate(0%, 0%) rotate(0deg) scale(1); }
+}
+
+/*create layer depth*/
+.flow-bg::after{
+  content:"";
+  position:absolute;
+  z-index:0;
+  inset:0;
+  background:
+    radial-gradient(circle farthest-corner at 50% 50%,
+      rgba(246, 255, 147, 0),
+      rgba(65, 5, 175, 0.7));
+  background-size: 100% 100%;
+  mix-blend-mode: multiply;
+  pointer-events: none;
 }
 
 .content{
   position:relative;
-  z-index:1;
+  z-index:2;
   min-height:100vh;
 }
 
@@ -155,6 +277,7 @@ button {
   color: var(--muted);
   margin-bottom: 1.5rem;
 }
+
 
 .hero-actions {
   display: flex;
