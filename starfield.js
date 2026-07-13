@@ -81,21 +81,3 @@ function drawStar(){
 }
 
 drawStar();
-
-/*
-
-function twinkleVibration(star,intensity=0.5){
-    let xNoise=Math.random()
-    let yNoise=Math.random()
-
-    function animate(){
-        xNoise+=0.01
-        yNoise+=0.01
-        const dx=Math.sin(xNoise)*intensity
-        const dy=Math.sin(yNoise)*intensity
-        star.style.transform=`translate(${dx}px,${dy}px)`
-        requestAnimationFrame(animate)
-    }
-
-    animate()
-}*/

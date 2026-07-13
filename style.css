@@ -1,13 +1,9 @@
 :root {
-  --bg: #040816;
-  --bg-soft: #0c1330;
   --surface: rgba(255, 255, 255, 0.06);
   --border: rgba(255, 255, 255, 0.14);
   --text: #f4f7ff;
   --muted: #a7b0cf;
-  --accent: #7c8cff;
   --accent-strong: #6ee7ff;
-  --shadow: 0 20px 50px rgba(0, 0, 0, 0.32);
 }
 
 * {
@@ -289,16 +285,72 @@ button {
 }
 
 .hero-button {
-  display: inline-block;
-  padding: 0.8rem 1.2rem;
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  background: var(--surface);
-  color: var(--text);
+  position:relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 12rem;
+  height: 2.8rem;
+  border-radius: 999rem;
+  border: none;
+  background:transparent;
 }
 
-.hero-button.outline {
-  background: transparent;
+/*edit the degree of the linear gradient to make it whirl*/
+@property --linear-angle{
+  syntax:'<angle>';
+  initial-value:152.2deg;
+  inherits:false;
+}
+
+/*make the button hollow*/
+.hero-button::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  padding:4px;
+  border-radius:999rem;
+  background:linear-gradient(var(--linear-angle),#332ab1, #9233ff,#236dbd, #29b4ff);
+  animation:gradient-whirl 10s linear infinite;
+
+  mask:linear-gradient(#fff 0 0),linear-gradient(#000 0 0) content-box;
+  mask-composite:exclude;
+  -webkit-mask:linear-gradient(#fff 0 0),linear-gradient(#000 0 0) content-box;
+  -webkit-mask-composite:xor;
+
+  pointer-events:none;
+}
+
+/*when mouse hovers over the button, the button glows*/
+/*duplicate an identical rotating gradient layer*/
+.hero-button::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(var(--linear-angle),#332ab1, #9233ff,#236dbd, #29b4ff);
+  animation:gradient-whirl 10s linear infinite;
+  z-index:-1;
+
+  filter:blur(20px);
+  opacity:0;
+  transition:opacity 0.4s ease,
+             filter 0.4s ease;
+
+  pointer-events:none;
+}
+
+@keyframes gradient-whirl{
+  to {--linear-angle:512.2deg;}
+}
+
+.hero-button:hover::after{ opacity:1 }
+.hero-button:active::after{ filter:blur(10px) }
+
+.hero-actions{
+  font-weight:bold;
+  z-index:10;
+  text-shadow:0 0 3px white;
+  letter-spacing:5px;
 }
 
 @media (max-width: 640px) {
