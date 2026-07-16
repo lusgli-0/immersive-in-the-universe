@@ -4,6 +4,7 @@
   --text: #f4f7ff;
   --muted: #a7b0cf;
   --accent-strong: #6ee7ff;
+  --nav-height: 5rem;
 }
 
 * {
@@ -213,7 +214,10 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  min-height: var(--nav-height);
   padding: 1.25rem 0;
+  position: relative;
+  z-index: 30;
 }
 
 .nav-brand {
@@ -238,6 +242,7 @@ button {
 .nav-list a:hover,
 #lang-switch:hover {
   color: var(--text);
+  cursor:pointer
 }
 
 #lang-switch {
@@ -252,6 +257,13 @@ button {
   align-items: center;
   min-height: 78vh;
   padding: 3rem 0 4rem;
+  transition: opacity 0.45s ease, transform 0.45s ease;
+}
+
+.hero-section.is-hidden {
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
 }
 
 .hero-content {
@@ -294,6 +306,28 @@ button {
   border-radius: 999rem;
   border: none;
   background:transparent;
+  color: white;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+  cursor: pointer;
+}
+
+.hero-button{
+  font-weight:bold;
+  z-index:10;
+  text-shadow:0 0 3px white;
+  letter-spacing:5px;
+}
+
+.hero-button.is-pressed {
+  transform: scale(0.95);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.hero-button.is-pressed::before,
+.hero-button.is-pressed::after {
+  opacity: 0;
+  animation: none;
 }
 
 /*edit the degree of the linear gradient to make it whirl*/
@@ -344,13 +378,6 @@ button {
 }
 
 .hero-button:hover::after{ opacity:1 }
-
-.hero-actions{
-  font-weight:bold;
-  z-index:10;
-  text-shadow:0 0 3px white;
-  letter-spacing:5px;
-}
 
 @media (max-width: 640px) {
   .nav-bar {

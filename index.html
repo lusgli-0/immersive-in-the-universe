@@ -5,6 +5,7 @@
     <meta name="description" content="just a simple personal website" />
     <title>hi! lusper glimmer is here!(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="panel.css" />
     <meta name="author" content="lusgli-0, lusgli-0@outlook.com"/>
     <!--temporarily do not let search engine find it-->
     <meta name="robots" content="noindex,nofollow" />
@@ -24,12 +25,12 @@
     <div class="content">
     <!--navigation bar-->
     <nav id="main-nav" class="nav-bar" aria-label="Navigation bar">
-      <a href="#hero" class="nav-brand" data-i18n="site-title">lusper glimmer</a>
+      <a class="nav-brand" data-i18n="site-title">lusper glimmer</a>
       <ul class="nav-list">
-        <li><a href="#hero" data-i18n="nav-home">首页</a></li>
-        <li><a href="#about" data-i18n="nav-about">关于我</a></li>
-        <li><a href="#works" data-i18n="nav-works">作品</a></li>
-        <li><a href="#footer" data-i18n="nav-contact">联系</a></li>
+        <li><a data-i18n="nav-home">首页</a></li>
+        <li><a data-i18n="nav-about">关于我</a></li>
+        <li><a data-i18n="nav-works">作品</a></li>
+        <li><a data-i18n="nav-contact">联系</a></li>
       </ul>
       <button id="lang-switch" type="button" data-i18n="lang-switch">EN</button>
     </nav>
@@ -41,13 +42,20 @@
         <p class="hero-description" data-i18n="hero-description">
           那本质的光芒 终将自发地涌现
         </p>
-        <div class="hero-actions">
-          <a href="#works" class="hero-button" data-i18n="hero-cta">查看作品</a>
+        <div>
+          <button type="button" class="hero-button" data-i18n="hero-cta">查看作品</button>
         </div>
       </div>
     </header>
 
+    <div class="grid-container">
+      <div id="left-top-panel" class="detail-panel left-top"></div>
+      <div id="left-bottom-panel" class="detail-panel left-bottom"></div>
+      <div id="right-panel" class="detail-panel is-right"></div>
+    </div>
+
     <script src="lan_translation.js" defer></script>
+    <script src="hero-panel.js" defer></script>
     <script src="move_bg.js" defer></script>
     <script src="starfield.js" defer></script>
     </div>
