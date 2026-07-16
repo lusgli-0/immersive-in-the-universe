@@ -334,7 +334,7 @@ button {
   filter:blur(20px);
   opacity:0;
   transition:opacity 0.4s ease,
-             filter 0.4s ease;
+             flash-boom 0.4s ease;
 
   pointer-events:none;
 }
@@ -344,7 +344,6 @@ button {
 }
 
 .hero-button:hover::after{ opacity:1 }
-.hero-button:active::after{ filter:blur(10px) }
 
 .hero-actions{
   font-weight:bold;
