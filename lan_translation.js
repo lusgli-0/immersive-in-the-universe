@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "hero-subtitle": "沉浸在宇宙与星空中",
       "hero-title": "于幻梦中探索下一段旅程",
       "hero-description": "那本质的光芒 终将自发地涌现",
-      "hero-cta": "查看作品"
+      "hero-cta": "接入主控系统"
     },
     en: {
       "site-title": "lusper glimmer",
@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "hero-subtitle": "Immersed in the universe and the galaxies",
       "hero-title": "Explore your next dreamlike journey",
       "hero-description": "The essential light is destined to naturally emerge on its own",
-      "hero-cta": "View Works"
+      "hero-cta": "Access Main Control System"
     }
   };
 

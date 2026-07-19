@@ -1,15 +1,16 @@
+/*control the 3 panels*/
 .grid-container{
     position:fixed;
     top:calc(var(--nav-height) + 1rem);
-    left:2rem;
-    right:2rem;
+    left:10rem;
+    right:10rem;
     bottom:1.5rem;
     display:grid;
     gap:1.5rem;
     grid-template-columns: 3fr 7fr;
     grid-template-rows: 6fr 4fr;
 }
-
+/*the template of the background of the panel*/
 .detail-panel {
   padding: 2rem;
   border-radius: 2rem;
@@ -22,7 +23,7 @@
   transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.45s ease;
   z-index: 20;
 }
-
+/*when panels are needed, is-open is attached to all the detail-panel*/
 .detail-panel.is-open {
   opacity: 1;
   pointer-events: auto;
@@ -32,6 +33,59 @@
 .detail-panel.left-top {
   grid-column:1;
   grid-row:1;
+}
+/*each panel needs at least one grid*/
+#left-top-panel-grid-search{
+    box-sizing:content-box;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    display:grid;
+    gap:0.5rem;
+    grid-template-columns: 5fr 5fr;
+    grid-template-rows: 1.5fr repeat(8,1fr) 0.5fr;
+}
+/*a template of search bars*/
+.input-field{
+  background:#171717;
+  border-radius:999px;
+  border:none;
+
+  /*initialise pre-focus status for focus anime to play easely*/
+  outline-color:transparent;
+  outline-style:solid;
+  outline-width:0.1rem;
+  box-shadow:inset 0 0.2rem 0.5rem rgb(0, 0, 0),
+             0 0 0rem transparent;
+  transition: all 0.3s;
+}
+
+#search.input-field{
+  grid-column:1 / span 2;
+  grid-row: 1;
+}
+
+.detail-panel.is-open #search.input-field.animated{
+  animation:slideAndExpand 3s ease-in-out forwards;
+}
+
+#search.input-field.has-loaded{
+  max-width:100%;
+}
+
+@keyframes slideAndExpand{
+  0%{max-width:2.5rem;}
+  90%{max-width: 125%;}
+  100%{max-width: 100%;}
+}
+
+#search.input-field:focus{
+  outline-width:0.1rem;
+  outline-style:solid;
+  outline-color:#29b4ff;
+  box-shadow:inset 0 0.1rem 0.8rem #29b4ff,
+             0 0 6rem #332ab1;
 }
 
 .detail-panel.is-right {
