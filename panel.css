@@ -47,12 +47,19 @@
     grid-template-rows: 1.5fr repeat(8,1fr) 0.5fr;
 }
 /*a template of search bars*/
-.input-field{
+.search-form{
+  grid-column:1 / span 2;
+  grid-row: 1;
+
+  display:flex;
+  align-items: center;
+  gap:0.6rem;
+
   background:#171717;
   border-radius:999px;
-  border:none;
+  padding:0.4rem 1rem;
 
-  /*initialise pre-focus status for focus anime to play easely*/
+ /*initialise pre-focus status for focus anime to play easely*/
   outline-color:transparent;
   outline-style:solid;
   outline-width:0.1rem;
@@ -61,26 +68,22 @@
   transition: all 0.3s;
 }
 
-#search.input-field{
-  grid-column:1 / span 2;
-  grid-row: 1;
+.input-icon{
+  left:0.8rem;
+  width:1.2rem;
+  height:1.2rem;
+  pointer-events:none;
 }
 
-.detail-panel.is-open #search.input-field.animated{
-  animation:slideAndExpand 3s ease-in-out forwards;
+.input-field{
+  background:none;
+  border:none;
+  outline:none;
+  width:100%;
+  color:white;
 }
 
-#search.input-field.has-loaded{
-  max-width:100%;
-}
-
-@keyframes slideAndExpand{
-  0%{max-width:2.5rem;}
-  90%{max-width: 125%;}
-  100%{max-width: 100%;}
-}
-
-#search.input-field:focus{
+.search-form:focus-within{
   outline-width:0.1rem;
   outline-style:solid;
   outline-color:#29b4ff;
